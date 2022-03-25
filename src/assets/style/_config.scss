@@ -1,0 +1,19 @@
+$primary-color:#08053b;
+$secondary-color:#e7e7e7;
+
+
+
+// if the background color more light the text color will be dark and 
+@function set-text-color($color){
+    @if(lightness($color)>70){
+        @return #161616;
+    }@else{
+        @return #ffff;
+    }
+}
+
+// you can use this as background color
+@mixin set-background-color($color) {
+    background-color: $color;
+    color: set-text-color($color);
+}
